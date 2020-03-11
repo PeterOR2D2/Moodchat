@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "423752642468",
+    "firebase_url": "https://mentalhealthrecommender.firebaseio.com",
+    "project_id": "mentalhealthrecommender",
+    "storage_bucket": "mentalhealthrecommender.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423752642468:android:f37621b10829a8440c5b31",
+        "android_client_info": {
+          "package_name": "com.example.mentalhealthlogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423752642468-c1dqvqh074ehcdjdoq069uum64ppvqdq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA3OdgomJRQJh-gDjS1mA9N5WiILY-tH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423752642468-c1dqvqh074ehcdjdoq069uum64ppvqdq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423752642468:android:b6729762d1b292310c5b31",
+        "android_client_info": {
+          "package_name": "com.example.myapplicationtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423752642468-c1dqvqh074ehcdjdoq069uum64ppvqdq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA3OdgomJRQJh-gDjS1mA9N5WiILY-tH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423752642468-c1dqvqh074ehcdjdoq069uum64ppvqdq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423752642468:android:70ea403fde78f4cd0c5b31",
+        "android_client_info": {
+          "package_name": "com.mutwakilmo.android.moodtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423752642468-c1dqvqh074ehcdjdoq069uum64ppvqdq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA3OdgomJRQJh-gDjS1mA9N5WiILY-tH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423752642468-c1dqvqh074ehcdjdoq069uum64ppvqdq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

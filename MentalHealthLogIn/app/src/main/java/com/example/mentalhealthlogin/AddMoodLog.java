@@ -32,7 +32,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
 
 public class AddMoodLog extends AppCompatActivity implements GestureDetector.OnGestureListener {
-    private static final String TAG = "AddMood";
+    private static final String TAG = "AddMoodLog";
     // Class name for Log tag
     private static final String LOG_TAG = AddMoodLog.class.getSimpleName();
 

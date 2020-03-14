@@ -11,6 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".AddFoodLog"></activity>
         <activity android:name=".AddSleepLog" />
+        <activity android:name=".AddMoodLog" />
+        <activity android:name=".mood.ui.MoodHistoryActivity" />
         <activity android:name=".AddActivityLog" />
         <activity android:name=".Main3Activity" />
         <activity android:name=".Home" />

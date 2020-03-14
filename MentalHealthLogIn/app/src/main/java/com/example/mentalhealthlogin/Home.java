@@ -16,7 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class Main2Activity extends AppCompatActivity {
+public class Home extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
@@ -25,7 +25,7 @@ public class Main2Activity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         this.db = FirebaseFirestore.getInstance();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.home);
     }
 
     public void addactivitylog(View view)
@@ -37,6 +37,11 @@ public class Main2Activity extends AppCompatActivity {
     public void addsleeplog(View view)
     {
         startActivity(new Intent(this, AddSleepLog.class));
+    }
+
+    public void addmoodlog(View view)
+    {
+        startActivity(new Intent(this, AddMoodLog.class));
     }
 
     public void addfoodlog(View view)
@@ -56,7 +61,7 @@ public class Main2Activity extends AppCompatActivity {
                     {
                         if(document.get("email").toString().equals(curr_email))
                         {
-                            Toast.makeText(Main2Activity.this, document.get("username").toString()+
+                            Toast.makeText(Home.this, document.get("username").toString()+
                                     " has been sign out", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -64,7 +69,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
         mAuth.signOut();
-        Intent intent = new Intent(Main2Activity.this, MainActivity.class);
+        Intent intent = new Intent(Home.this, MainActivity.class);
         startActivity(intent);
     }
 }

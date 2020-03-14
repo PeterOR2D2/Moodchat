@@ -71,7 +71,7 @@ public class AddSleepLog extends AppCompatActivity {
 
     public void Homebutton(View view)
     {
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
 }

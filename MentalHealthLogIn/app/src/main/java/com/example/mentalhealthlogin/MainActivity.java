@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         else{System.out.println("Something happened");}
         //mAuth.signOut();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login);
         e_mail = (EditText)findViewById(R.id.et_email);
         password = (EditText)findViewById(R.id.et_pass);
         login = (Button)findViewById(R.id.button_login);
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
     private void verify(final String e_mail, final String password){
 
         if((e_mail.equals("Admin")) && (password.equals("1234"))) {
-            Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+            Intent intent = new Intent(MainActivity.this, Home.class);
             startActivity(intent);
         }
         else
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
                         Toast.makeText(MainActivity.this, "Successfully logged in", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                        Intent intent = new Intent(MainActivity.this, Home.class);
                         startActivity(intent);
                     }
                     else

@@ -58,7 +58,7 @@ public class AddActivityLog extends AppCompatActivity {
                 timePickerDialog = new TimePickerDialog(AddActivityLog.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        editeventTime.setText(String.format("%02d:%02d", hourOfDay, minute));
+                        editeventTime.setText(String.format("%02d hours %02d minutes", hourOfDay, minute));
                     }
                 }, ehour, eminute, true);
                 timePickerDialog.show();
@@ -72,6 +72,7 @@ public class AddActivityLog extends AppCompatActivity {
         final Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         System.out.println(timestamp.toString());
         System.out.println(editeventTime.getText().toString());
+
         System.out.println(activityame.getText().toString());
         db.collection("Users").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override

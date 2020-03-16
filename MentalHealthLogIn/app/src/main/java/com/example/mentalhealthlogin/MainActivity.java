@@ -49,9 +49,7 @@ public class MainActivity extends AppCompatActivity {
         this.db = FirebaseFirestore.getInstance();
         CollectionReference allUserref  = this.db.collection("Users");
         mAuth = FirebaseAuth.getInstance();
-        if(mAuth.getCurrentUser() == null){System.out.println("NO one is in log");}
-        else{System.out.println("Something happened");}
-        //mAuth.signOut();
+        //mAuth.signOut(); //For Debug.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         e_mail = (EditText)findViewById(R.id.et_email);

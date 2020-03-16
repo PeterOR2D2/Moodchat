@@ -45,7 +45,7 @@ public class AddMoodLog extends AppCompatActivity implements GestureDetector.OnG
     private SharedPreferences mPreferences;
     private int currentDay;
     private int currentMoodIndex;
-    //private String currentComment;
+    private String currentComment;
 
     // [START declare_analytics]
     private FirebaseAnalytics mFirebaseAnalytics;
@@ -72,7 +72,7 @@ public class AddMoodLog extends AppCompatActivity implements GestureDetector.OnG
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-
+        System.out.println(currentMoodIndex);
         changeUiForMood(currentMoodIndex);
         scheduleAlarm();
 
@@ -82,6 +82,10 @@ public class AddMoodLog extends AppCompatActivity implements GestureDetector.OnG
         addCommentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                currentDay = mPreferences.getInt(SharedPreferencesHelper.KEY_CURRENT_DAY, 1);
+                currentMoodIndex = mPreferences.getInt(SharedPreferencesHelper.KEY_CURRENT_MOOD, 3);
+                System.out.println(SharedPreferencesHelper.KEY_CURRENT_MOOD);
+                System.out.println(currentMoodIndex);
                 Log.d(LOG_TAG, "Button clicked!");
                 AlertDialog.Builder builder = new AlertDialog.Builder(AddMoodLog.this);
                 final EditText editText = new EditText(AddMoodLog.this);
@@ -97,7 +101,6 @@ public class AddMoodLog extends AppCompatActivity implements GestureDetector.OnG
                                 //}
 
                                 dialog.dismiss();
-
                                 Toast.makeText(AddMoodLog.this, "Mood Saved", Toast.LENGTH_SHORT).show();
 
                             }

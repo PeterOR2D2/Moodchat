@@ -16,7 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class Home extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
@@ -25,7 +25,7 @@ public class Home extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         this.db = FirebaseFirestore.getInstance();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        setContentView(R.layout.activity_main2);
     }
 
     public void addactivitylog(View view)
@@ -39,18 +39,15 @@ public class Home extends AppCompatActivity {
         startActivity(new Intent(this, AddSleepLog.class));
     }
 
-    public void addmoodlog(View view)
-    {
-        startActivity(new Intent(this, AddMoodLog.class));
-    }
-
     public void addfoodlog(View view)
     {
         startActivity(new Intent(this, AddFoodLog.class));
     }
 
-    public void displayactivitylog(View view){startActivity(new Intent(this, DisplayActivityLog.class));}
-
+    public void displayactivitylog(View view)
+    {
+        startActivity(new Intent(this, DisplayActivityLog.class));
+    }
 
     public void signOut(View view)
     {
@@ -64,7 +61,7 @@ public class Home extends AppCompatActivity {
                     {
                         if(document.get("email").toString().equals(curr_email))
                         {
-                            Toast.makeText(Home.this, document.get("username").toString()+
+                            Toast.makeText(Main2Activity.this, document.get("username").toString()+
                                     " has been sign out", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -72,7 +69,7 @@ public class Home extends AppCompatActivity {
             }
         });
         mAuth.signOut();
-        Intent intent = new Intent(Home.this, MainActivity.class);
+        Intent intent = new Intent(Main2Activity.this, MainActivity.class);
         startActivity(intent);
     }
 }

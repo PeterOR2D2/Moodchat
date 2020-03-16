@@ -14,7 +14,7 @@ public class AddFoodLog extends AppCompatActivity {
         setContentView(R.layout.activity_add_food_log);
     }
 
-    public void Homebutton(View view)
+    public void HomebuttonFood(View view)
     {
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);

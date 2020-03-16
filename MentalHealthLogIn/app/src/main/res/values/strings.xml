@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mental Health Log In</string>
+    <string name="app_name">Moodchat</string>
 
     <!--Mood-->
     <string name="mood_of_the_user">Mood of the user</string>

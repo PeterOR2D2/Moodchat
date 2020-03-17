@@ -23,7 +23,7 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="359dp"
-        android:layout_height="67"
+        android:layout_height="67dp"
         android:background="#3F51B5"
         android:fontFamily="@font/comfortaa_bold"
         android:onClick="displayactivitylog"

@@ -9,63 +9,68 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="359dp"
+        android:layout_height="67dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
         android:onClick="addactivitylog"
         android:text="Add Activity Log"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="434dp" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="106dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginRight="72dp"
-        android:text="List Activity"
+        android:layout_width="359dp"
+        android:layout_height="67"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
         android:onClick="displayactivitylog"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="List Activity"
+        android:textColor="#FCFCFC"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="522dp" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="359dp"
+        android:layout_height="67dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
         android:onClick="signOut"
         android:text="Logout"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.777"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="610dp" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="146dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="359dp"
+        android:layout_height="67dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
         android:onClick="addsleeplog"
         android:text="Add Sleep"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="344dp" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="142dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="359dp"
+        android:layout_height="67dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
         android:onClick="addfoodlog"
         android:text="Add food"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="252dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

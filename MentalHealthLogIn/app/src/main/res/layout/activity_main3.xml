@@ -9,25 +9,29 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="215dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="60dp"
+        android:layout_width="382dp"
+        android:layout_height="145dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/comfortaa_bold"
         android:text="Create an Account"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
+        android:textColor="#3F51B5"
+        android:textSize="54sp"
         app:layout_constraintBottom_toTopOf="@+id/user_name_create"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/user_name_create"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
+        android:layout_width="138dp"
+        android:layout_height="37dp"
+        android:fontFamily="@font/comfortaa_light"
         android:text="Username:"
-        android:textColor="@color/colorAccent"
+        android:textColor="#3F51B5"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/et_username_created"
         app:layout_constraintEnd_toStartOf="@+id/submit_button"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/password_create" />
 
     <EditText
@@ -39,34 +43,36 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/e_mail_create"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/e_mail_create"
-        android:layout_width="0dp"
+        android:layout_width="176dp"
         android:layout_height="40dp"
         android:layout_marginStart="39dp"
         android:layout_marginLeft="39dp"
         android:layout_marginEnd="51dp"
         android:layout_marginRight="51dp"
-        android:text="Create Email:"
-        android:textColor="@color/colorAccent"
+        android:fontFamily="@font/comfortaa_light"
+        android:text="Enter E-mail:"
+        android:textColor="#3F51B5"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/et_email_created"
         app:layout_constraintEnd_toEndOf="@+id/et_email_created"
+        app:layout_constraintHorizontal_bias="0.026"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/et_email_created"
         android:layout_width="213dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/password_create"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -75,8 +81,9 @@
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:fontFamily="@font/comfortaa_light"
         android:text="Create Password:"
-        android:textColor="@color/colorAccent"
+        android:textColor="#3F51B5"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/et_password_created"
         app:layout_constraintStart_toStartOf="@+id/et_password_created" />
@@ -85,20 +92,23 @@
         android:id="@+id/et_password_created"
         android:layout_width="213dp"
         android:layout_height="40dp"
-        android:layout_marginTop="458dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="458dp" />
 
     <Button
         android:id="@+id/submit_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="127dp"
+        android:layout_height="63dp"
         android:layout_marginTop="56dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
         android:text="Submit"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_password_created" />

@@ -33,7 +33,7 @@
         android:background="#3F51B5"
         android:fontFamily="@font/comfortaa_bold"
         android:onClick="displayactivitylog"
-        android:text="List Activity"
+        android:text="Activity Log"
         android:textColor="#FCFCFC"
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/sleeplogdisplay"

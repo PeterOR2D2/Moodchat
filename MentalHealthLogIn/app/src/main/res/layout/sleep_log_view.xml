@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="468dp"
+        android:layout_height="match_parent"
+        android:layout_weight="22.2"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/sleep_quality_val"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#3F51B5"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/timestamp_val_for_sleep"
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#3F51B5"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="33.3"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/sleep_hours_val"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#3F51B5"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/time_slept_val"
+            android:layout_width="match_parent"
+            android:layout_height="103dp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#3F51B5"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -4,73 +4,122 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main2Activity">
+    tools:context=".Home">
 
 
     <Button
         android:id="@+id/button"
-        android:layout_width="359dp"
-        android:layout_height="67dp"
+        android:layout_width="116dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginBottom="28dp"
         android:background="#3F51B5"
         android:fontFamily="@font/comfortaa_bold"
         android:onClick="addactivitylog"
         android:text="Add Activity Log"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="434dp" />
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="359dp"
-        android:layout_height="67dp"
+        android:layout_width="116dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:layout_marginBottom="32dp"
         android:background="#3F51B5"
         android:fontFamily="@font/comfortaa_bold"
         android:onClick="displayactivitylog"
         android:text="List Activity"
         android:textColor="#FCFCFC"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="522dp" />
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/sleeplogdisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/button" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="359dp"
-        android:layout_height="67dp"
+        android:layout_width="116dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
         android:background="#3F51B5"
         android:fontFamily="@font/comfortaa_bold"
         android:onClick="signOut"
         android:text="Logout"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="610dp" />
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.715"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="359dp"
-        android:layout_height="67dp"
+        android:layout_width="116dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginBottom="32dp"
         android:background="#3F51B5"
         android:fontFamily="@font/comfortaa_bold"
         android:onClick="addsleeplog"
         android:text="Add Sleep"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="344dp" />
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/button8"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="359dp"
-        android:layout_height="67dp"
+        android:layout_width="116dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginBottom="196dp"
         android:background="#3F51B5"
         android:fontFamily="@font/comfortaa_bold"
         android:onClick="addfoodlog"
         android:text="Add food"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="252dp" />
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/foodlogdisplay"
+        android:layout_width="116dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
+        android:layout_marginBottom="196dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
+        android:onClick="displayfoodlog"
+        android:text="Food Log"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/sleeplogdisplay"
+        android:layout_width="116dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:layout_marginBottom="36dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
+        android:onClick="displaysleeplog"
+        android:text="Sleep Log"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/foodlogdisplay"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

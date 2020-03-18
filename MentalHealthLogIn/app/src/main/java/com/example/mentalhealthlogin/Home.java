@@ -25,7 +25,7 @@ public class Home extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         this.db = FirebaseFirestore.getInstance();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        setContentView(R.layout.activity_main2);
     }
 
     public void addactivitylog(View view)
@@ -50,6 +50,12 @@ public class Home extends AppCompatActivity {
     }
 
     public void displayactivitylog(View view){startActivity(new Intent(this, DisplayActivityLog.class));}
+
+    public void displaysleeplog(View view){startActivity(new Intent(this, DisplaySleepActivity.class));}
+
+    public void displayfoodlog(View view){startActivity(new Intent(this, DisplayFoodLog.class));}
+
+
 
 
     public void signOut(View view)

@@ -13,6 +13,7 @@ import android.widget.TimePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.sql.Timestamp;
 import java.util.Date;
@@ -46,7 +47,7 @@ public class AddActivityLog extends AppCompatActivity {
         this.db = FirebaseFirestore.getInstance();
         activityame  = findViewById(R.id.activityName);
         editeventTime = (TextView) findViewById(R.id.editEventTime);
-        editeventTime.setTextColor(Color.parseColor("#FFFF00"));
+        editeventTime.setTextColor(Color.parseColor("#000000"));
         editeventTime.setTextSize(30);
         editeventTime.setGravity(Gravity.CENTER);
         editeventTime.setOnClickListener(new View.OnClickListener() {
@@ -55,12 +56,24 @@ public class AddActivityLog extends AppCompatActivity {
                 final Calendar ecurrtime = Calendar.getInstance();
                 int ehour = ecurrtime.get(Calendar.HOUR_OF_DAY);
                 int eminute = ecurrtime.get(Calendar.MINUTE);
-                timePickerDialog = new TimePickerDialog(AddActivityLog.this, new TimePickerDialog.OnTimeSetListener() {
+                TimePickerDialog.OnTimeSetListener myTimeListener = new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        editeventTime.setText(String.format("%02d hours %02d minutes", hourOfDay, minute));
+                        if (view.isShown()) {
+                            ecurrtime.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                            ecurrtime.set(Calendar.MINUTE, minute);
+
+                        }
+                    }
+                };
+                TimePickerDialog timePickerDialog = new TimePickerDialog(AddActivityLog.this, android.R.style.Theme_Holo_Light_Dialog_NoActionBar, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        editeventTime.setText(String.format("%d hours %d minutes", hourOfDay, minute));
                     }
                 }, ehour, eminute, true);
+                timePickerDialog.setTitle("Choose hour:");
+                timePickerDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
                 timePickerDialog.show();
             }
         });
@@ -70,10 +83,7 @@ public class AddActivityLog extends AppCompatActivity {
     public void addActivity(View view)
     {
         final Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        System.out.println(timestamp.toString());
-        System.out.println(editeventTime.getText().toString());
-
-        System.out.println(activityame.getText().toString());
+        final String timestamp_result_activity = new SimpleDateFormat("MM/hh/yyyy hh:mm:ss a").format(timestamp);
         db.collection("Users").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -87,7 +97,7 @@ public class AddActivityLog extends AppCompatActivity {
                             Map<String, String> activity_log_status = new HashMap();
                             activity_log_status.put("duration", editeventTime.getText().toString());
                             activity_log_status.put("what", activityame.getText().toString());
-                            create_activity.put("activitytime", timestamp.toString());
+                            create_activity.put("activitytime", timestamp_result_activity);
                             create_activity.put("activitystatus", activity_log_status);
                             String name = document.get("username").toString();
                             db.collection("Users").document(name).update("activitylog", FieldValue.arrayUnion(create_activity));

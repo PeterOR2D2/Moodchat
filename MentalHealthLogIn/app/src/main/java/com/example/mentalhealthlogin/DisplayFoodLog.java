@@ -6,46 +6,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.text.method.ScrollingMovementMethod;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.model.Values;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.lang.Object;
 
+public class DisplayFoodLog extends AppCompatActivity {
 
-public class DisplayActivityLog extends AppCompatActivity {
-
-    private TextView test;
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
-    private ListView listView;
-    private AcivityListAdapter arrayAdapter;
-    private List activity_list = new ArrayList<>();
-
-
+    private ListView listview;
+    private FoodLogAdapter arrayAdapter;
+    private List food_log = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_log);
-        listView = findViewById(R.id.acitvity_view);
+        setContentView(R.layout.activity_display_food_log);
+        listview = findViewById(R.id.food_view);
 
         mAuth = FirebaseAuth.getInstance();
         this.db = FirebaseFirestore.getInstance();
@@ -68,11 +56,11 @@ public class DisplayActivityLog extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                             String result = "";
-                            ArrayList<String> activity_info = new ArrayList<>();
+                            ArrayList<String> food_info = new ArrayList<>();
                             if(task.isSuccessful())
                             {
                                 DocumentSnapshot doc = task.getResult();
-                                List<Map<String, Object>> list = (List<Map<String, Object>>) doc.get("activitylog");
+                                List<Map<String, Object>> list = (List<Map<String, Object>>) doc.get("foodlog");
                                 for(Map<String, Object> l: list)
                                 {
                                     for (Map.Entry<String, Object> entry : l.entrySet()) {
@@ -82,21 +70,21 @@ public class DisplayActivityLog extends AppCompatActivity {
                                             Map x = (Map) o;
                                             for(Object yu: x.values())
                                             {
-                                                activity_info.add(yu.toString());
+                                                food_info.add(yu.toString());
                                                 //result += yu.toString() + " ";
                                             }
                                         }
                                         else
                                         {
-                                            activity_info.add(entry.getValue().toString());
+                                            food_info.add(entry.getValue().toString());
                                         }
                                     }
-                                    activity_list.add(new Activityinfo(activity_info.get(1), activity_info.get(0), activity_info.get(2)));
-                                    activity_info = new ArrayList<>();
+                                    food_log.add(new FoodInfo(food_info.get(0), food_info.get(1)));
+                                    food_info = new ArrayList<>();
                                     //test.setText(result);
                                 }
-                                arrayAdapter = new AcivityListAdapter(DisplayActivityLog.this, R.layout.activity_info_view, activity_list);
-                                listView.setAdapter(arrayAdapter);
+                                arrayAdapter = new FoodLogAdapter(DisplayFoodLog.this, R.layout.food_log_view, food_log);
+                                listview.setAdapter(arrayAdapter);
 
                             }
                         }
@@ -104,15 +92,9 @@ public class DisplayActivityLog extends AppCompatActivity {
                 }
             }
         });
-        display_activity();
     }
 
-    public void display_activity()
-    {
-        System.out.println(activity_list);
-    }
-
-    public void HomebuttonDisplay(View view)
+    public void HomeButtonforDisplayFood(View view)
     {
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);

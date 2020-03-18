@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
         this.db = FirebaseFirestore.getInstance();
         CollectionReference allUserref  = this.db.collection("Users");
         mAuth = FirebaseAuth.getInstance();
-        //mAuth.signOut(); //For Debug.
+        mAuth.signOut(); //For Debug.
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_main);
         e_mail = (EditText)findViewById(R.id.et_email);
         password = (EditText)findViewById(R.id.et_pass);
         login = (Button)findViewById(R.id.button_login);

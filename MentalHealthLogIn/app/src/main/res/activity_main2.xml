@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main2Activity">
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="359dp"
+        android:layout_height="67dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
+        android:onClick="addactivitylog"
+        android:text="Add Activity Log"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="434dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="359dp"
+        android:layout_height="67"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
+        android:onClick="displayactivitylog"
+        android:text="List Activity"
+        android:textColor="#FCFCFC"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="522dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="359dp"
+        android:layout_height="67dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
+        android:onClick="signOut"
+        android:text="Logout"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="610dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="359dp"
+        android:layout_height="67dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
+        android:onClick="addsleeplog"
+        android:text="Add Sleep"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="344dp" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="359dp"
+        android:layout_height="67dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
+        android:onClick="addfoodlog"
+        android:text="Add food"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

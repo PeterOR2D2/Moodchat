@@ -2,19 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_list_id"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DisplayActivityLog">
-
+    tools:context=".DisplayFoodLog">
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="344dp"
-        android:layout_height="95dp"
+        android:layout_width="307dp"
+        android:layout_height="98dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="List Activity"
+        android:text="Food Log"
         android:textColor="#3F51B5"
         android:textSize="54dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,30 +24,28 @@
         android:id="@+id/button9"
         android:layout_width="127dp"
         android:layout_height="63dp"
+        android:background="@color/colorPrimary"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp"
-        android:background="@color/colorPrimary"
-        android:onClick="HomebuttonDisplay"
+        android:layout_marginBottom="18sp"
         android:text="Home"
         android:textColor="#FFFFFF"
+        android:onClick="HomeButtonforDisplayFood"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ListView
-        android:id="@+id/acitvity_view"
+        android:id="@+id/food_view"
         android:layout_width="378dp"
         android:layout_height="345dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="120dp"
-        />
-
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="135dp" />
 
 </RelativeLayout>

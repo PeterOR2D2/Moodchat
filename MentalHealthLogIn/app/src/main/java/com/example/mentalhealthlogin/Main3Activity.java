@@ -93,6 +93,21 @@ public class Main3Activity extends AppCompatActivity {
                     }
                     if(!found)
                     {
+                        mAuth.createUserWithEmailAndPassword(email, pword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful())
+                                {
+                                    Toast.makeText(Main3Activity.this, uname+" has been successfully created", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(Main3Activity.this, Home.class);
+                                    startActivity(intent);
+                                }
+                                else
+                                {
+                                    Toast.makeText(Main3Activity.this, "Account exists", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
                         Map<String, Object> create_user = new HashMap<>();
                         List<Map<String,Map<String, String>>> activitylog= new ArrayList<Map<String,Map<String, String>>>();
                         List<Map<String,Map<String, String>>> sleeplog= new ArrayList<Map<String,Map<String, String>>>();
@@ -112,22 +127,22 @@ public class Main3Activity extends AppCompatActivity {
             }
         });
         mAuth.createUserWithEmailAndPassword(email, pword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            boolean success = false;
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful())
                 {
-                    System.out.println("X if is");
+                    success = true;
                     Toast.makeText(Main3Activity.this, uname+" has been successfully created", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Main3Activity.this, Home.class);
+                    startActivity(intent);
                 }
                 else
                 {
-                    Toast.makeText(Main3Activity.this, "opps", Toast.LENGTH_SHORT).show();
-                    System.out.println("There is a prolem");
+                    Toast.makeText(Main3Activity.this, "Account exists", Toast.LENGTH_SHORT).show();
                 }
             }
         });
         //FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(Main3Activity.this, Home.class);
-        startActivity(intent);
     }
 }

@@ -126,7 +126,7 @@ public class Main3Activity extends AppCompatActivity {
                 }
             }
         });
-        FirebaseAuth.getInstance().signOut();
+        //FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(Main3Activity.this, Home.class);
         startActivity(intent);
     }

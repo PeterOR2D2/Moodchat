@@ -55,6 +55,7 @@ public class Home extends AppCompatActivity {
 
     public void displayfoodlog(View view){startActivity(new Intent(this, DisplayFoodLog.class));}
 
+    public void addnotification(View view) { startActivity(new Intent(this, AddNotification.class)); }
 
 
 

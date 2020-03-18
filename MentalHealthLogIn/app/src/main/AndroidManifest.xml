@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DisplaySleepLog"></activity>
+        <activity android:name=".AddNotification"></activity>
+        <activity android:name=".DisplaySleepLog" />
         <activity android:name=".AddFoodLog" />
         <activity android:name=".AddSleepLog" />
         <activity android:name=".AddMoodLog" />
@@ -18,8 +19,8 @@
         <activity android:name=".Main3Activity" />
         <activity android:name=".DisplayActivityLog" />
         <activity android:name=".Home" />
-        <activity android:name=".DisplaySleepActivity"/>
-        <activity android:name=".DisplayFoodLog"/>
+        <activity android:name=".DisplaySleepActivity" />
+        <activity android:name=".DisplayFoodLog" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

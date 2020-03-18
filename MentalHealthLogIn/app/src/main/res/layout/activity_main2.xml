@@ -29,7 +29,7 @@
         android:layout_height="50dp"
         android:layout_marginEnd="84dp"
         android:layout_marginRight="84dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="28dp"
         android:background="#3F51B5"
         android:fontFamily="@font/comfortaa_bold"
         android:onClick="displayactivitylog"
@@ -38,7 +38,7 @@
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/sleeplogdisplay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toEndOf="@+id/button" />
 
     <Button
@@ -106,12 +106,44 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
+        android:id="@+id/addmood"
+        android:layout_width="116dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="240dp"
+        android:layout_marginRight="240dp"
+        android:layout_marginBottom="112dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
+        android:onClick="addmoodlog"
+        android:text="Add mood"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/addnotification"
+        android:layout_width="116dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
+        android:layout_marginBottom="116dp"
+        android:background="#3F51B5"
+        android:fontFamily="@font/comfortaa_bold"
+        android:onClick="addnotification"
+        android:text="Add notification"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
         android:id="@+id/sleeplogdisplay"
         android:layout_width="116dp"
         android:layout_height="50dp"
         android:layout_marginEnd="84dp"
         android:layout_marginRight="84dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="32dp"
         android:background="#3F51B5"
         android:fontFamily="@font/comfortaa_bold"
         android:onClick="displaysleeplog"
@@ -119,7 +151,8 @@
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/foodlogdisplay"
-        app:layout_constraintEnd_toEndOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toEndOf="@+id/button5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

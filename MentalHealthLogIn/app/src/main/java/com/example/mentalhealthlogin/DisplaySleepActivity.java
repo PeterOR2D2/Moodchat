@@ -79,7 +79,14 @@ public class DisplaySleepActivity extends AppCompatActivity {
                                             sleep_info.add(entry.getValue().toString());
                                         }
                                     }
-                                    sleep_log.add(new SleepInfo(sleep_info.get(2), sleep_info.get(1), sleep_info.get(3), sleep_info.get(0)));
+                                    if(sleep_info.get(2).matches("([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])\\s*([AaPp][Mm])"))
+                                    {
+                                        sleep_log.add(new SleepInfo(sleep_info.get(3), sleep_info.get(1), sleep_info.get(2), sleep_info.get(0)));;
+                                    }
+                                    else
+                                    {
+                                        sleep_log.add(new SleepInfo(sleep_info.get(2), sleep_info.get(1), sleep_info.get(3), sleep_info.get(0)));;
+                                    }
                                     sleep_info = new ArrayList<>();
                                     //test.setText(result);
                                 }

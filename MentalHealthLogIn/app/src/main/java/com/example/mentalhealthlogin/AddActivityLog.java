@@ -1,9 +1,11 @@
 package com.example.mentalhealthlogin;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -38,6 +40,8 @@ public class AddActivityLog extends AppCompatActivity {
     private EditText activityame;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private int verifyhour;
+    private int verifymin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +64,8 @@ public class AddActivityLog extends AppCompatActivity {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         if (view.isShown()) {
+                            verifyhour=hourOfDay;
+                            verifymin=minute;
                             ecurrtime.set(Calendar.HOUR_OF_DAY, hourOfDay);
                             ecurrtime.set(Calendar.MINUTE, minute);
 
@@ -82,6 +88,21 @@ public class AddActivityLog extends AppCompatActivity {
 
     public void addActivity(View view)
     {
+        if((verifyhour == 0) && (verifymin < 30))
+        {
+            System.out.println("Y");
+            AlertDialog.Builder builder = new AlertDialog.Builder(AddActivityLog.this);
+            builder.setTitle("Try to have at least 30 minutes of physical activity every day, even something light like going for a walk counts :)");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+            alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLUE);
+        }
         final Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         final String timestamp_result_activity = new SimpleDateFormat("MM/hh/yyyy hh:mm:ss a").format(timestamp);
         db.collection("Users").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

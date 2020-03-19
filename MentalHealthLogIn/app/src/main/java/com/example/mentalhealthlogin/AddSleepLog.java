@@ -1,9 +1,11 @@
 package com.example.mentalhealthlogin;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -35,6 +37,8 @@ public class AddSleepLog extends AppCompatActivity {
     private EditText sleepEnviron;
     private EditText sleepQuality;
     private TextView sleeptime;
+    private int verifymin;
+    private int verifyhour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +74,8 @@ public class AddSleepLog extends AppCompatActivity {
                         String am_pm_value;
                         if(hourOfDay >= 12){am_pm_value="PM";}
                         else{am_pm_value="AM";}
+                        verifymin = minute;
+                        verifyhour = hourOfDay;
                         sleeptime.setText(String.format("%02d:%02d"+" "+am_pm_value, hourOfDay, minute));
                     }
                 }, ehour, eminute, false);
@@ -85,10 +91,69 @@ public class AddSleepLog extends AppCompatActivity {
     {
         final Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         final String timestamp_result_sleep = new SimpleDateFormat("MM/hh/yyyy hh:mm:ss a").format(timestamp);
-        System.out.println(timestamp.toString());
-        System.out.println(sleepEnviron.getText().toString());
-        System.out.println(sleepQuality.getText().toString());
-        System.out.println(sleeptime.getText().toString());
+        if(sleepQuality.getText().toString().equals("restless"))
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(AddSleepLog.this);
+            builder.setTitle("Wind down in the 30 minutes before bedtime with a relaxing pre sleep ritual such as a warm bath, soft music, or reading.");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+            alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLUE);
+        }
+        else if(sleepQuality.getText().toString().equals("bad"))
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(AddSleepLog.this);
+            builder.setTitle("Try sleeping in a dark room and adjust the temperature to whatever is right for you!");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+            alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLUE);
+        }
+        else if(sleepEnviron.getText().toString().matches("^[0-9]+$"))
+        {
+            System.out.println(sleepEnviron.getText().toString());
+            if(Integer.parseInt(sleepEnviron.getText().toString()) < 6)
+            {
+                AlertDialog.Builder builder = new AlertDialog.Builder(AddSleepLog.this);
+                builder.setTitle("Please, try to get at least 6 hours \nof quality sleep each night!");
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLUE);
+            }
+
+        }
+        if(verifyhour == 0)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(AddSleepLog.this);
+            builder.setTitle("Please, try to sleep a bit more earlier!");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+            alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLUE);
+        }
+
+
         db.collection("Users").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {

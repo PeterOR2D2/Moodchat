@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -113,7 +114,10 @@ public class AddMoodLog extends AppCompatActivity implements GestureDetector.OnG
                         Toast.makeText(AddMoodLog.this, "Comment Canceled", Toast.LENGTH_SHORT).show();
                     }
                 })
-                        .create().show();
+                        ;
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+                alertDialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLUE);
 
 
             }

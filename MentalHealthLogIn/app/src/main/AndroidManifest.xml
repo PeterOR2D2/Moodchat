@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AddNotification"></activity>
-        <activity android:name=".DisplaySleepLog" />
         <activity android:name=".AddFoodLog" />
         <activity android:name=".AddSleepLog" />
         <activity android:name=".AddMoodLog" />
@@ -28,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
 
         <meta-data
             android:name="preloaded_fonts"

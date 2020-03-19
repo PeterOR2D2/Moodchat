@@ -8,14 +8,15 @@
 
     <EditText
         android:id="@+id/NotifName"
-        android:layout_width="365dp"
-        android:layout_height="86dp"
+        android:layout_width="390dp"
+        android:layout_height="78dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="36dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="What would you like us to notify you about?"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

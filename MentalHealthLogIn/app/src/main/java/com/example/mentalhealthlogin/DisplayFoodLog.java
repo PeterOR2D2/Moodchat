@@ -1,9 +1,13 @@
 package com.example.mentalhealthlogin;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -82,6 +86,20 @@ public class DisplayFoodLog extends AppCompatActivity {
                                     food_log.add(new FoodInfo(food_info.get(0), food_info.get(1)));
                                     food_info = new ArrayList<>();
                                     //test.setText(result);
+                                }
+                                if(food_log.size() < 3)
+                                {
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(DisplayFoodLog.this);
+                                    builder.setTitle("Please, try to get at least 3 meals a day!");
+                                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                        }
+                                    });
+                                    AlertDialog alertDialog = builder.create();
+                                    alertDialog.show();
+                                    alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLUE);
                                 }
                                 arrayAdapter = new FoodLogAdapter(DisplayFoodLog.this, R.layout.food_log_view, food_log);
                                 listview.setAdapter(arrayAdapter);
